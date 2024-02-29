@@ -1,0 +1,51 @@
+﻿<Window x:Class="Practicheskaya2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practicheskaya2"
+        mc:Ignorable="d"
+        Title="Практическая работа 2 Тронь Никита 2ИС-б" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" FontSize="30">Имя:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" FontSize="30">Фамилия:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="2" FontSize="30">Отчество:</TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="0"  FontSize="30">Дата рождения:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3"  FontSize="30">Введите пароль:</TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4"  FontSize="30">Повоторите пароль:</TextBlock>
+
+        <TextBox x:Name="firstName" Background="#FFC5C5C5" Grid.Column="0" FontSize="30" VerticalAlignment="Top" Height="69" Margin="0,40,10,0" Grid.RowSpan="2"/>
+        <TextBox x:Name="lastName" Background="#FFC5C5C5" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="69" Margin="0,40,10,0" Grid.RowSpan="2" FontSize="30"></TextBox>
+        <TextBox x:Name="patronymic" Background="#FFC5C5C5" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Height="69" Margin="0,40,10,0" Grid.RowSpan="2" FontSize="30"></TextBox>
+        <TextBox x:Name="firstPassword" Background="#FFC5C5C5" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Height="69" Margin="0,40,10,0" Grid.RowSpan="2" FontSize="30"></TextBox>
+        <TextBox x:Name="secondPassword" Background="#FFC5C5C5" Grid.Column="0" Grid.Row="4" VerticalAlignment="Top" Height="69" Margin="0,40,10,0" Grid.RowSpan="2" FontSize="30"></TextBox>
+
+        <Calendar x:Name="birthday" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom"></Calendar>
+
+        <Button Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Margin="33,0,26,0" Height="73" FontSize="30" Click="Registr" >Зарегистрироваться</Button>
+
+        <ListView x:Name="Users" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2">
+            <ListView.View>
+            <GridView>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}">Имя</GridViewColumn>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=LastName}" Width="100">Фамилия</GridViewColumn>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=Patronymic}">Отчество</GridViewColumn>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=Birthday}">Дата рождения</GridViewColumn>
+            </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
